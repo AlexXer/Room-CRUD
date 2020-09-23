@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alexxer.crud.R
-import com.alexxer.crud.data.UserViewModel
+import com.alexxer.crud.viewModel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_list.view.*
 
 

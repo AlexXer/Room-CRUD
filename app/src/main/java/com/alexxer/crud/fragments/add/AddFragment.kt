@@ -11,15 +11,15 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.alexxer.crud.R
-import com.alexxer.crud.data.User
-import com.alexxer.crud.data.UserViewModel
+import com.alexxer.crud.model.User
+import com.alexxer.crud.viewModel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 
 
 class AddFragment : Fragment() {
 
-    private   lateinit var mUserViewModel:UserViewModel
+    private   lateinit var mUserViewModel: UserViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +43,7 @@ class AddFragment : Fragment() {
 
         if (inputCheck(firstName,lastName, age)){
             //Create User Object
-            val user =User(0,firstName,lastName,Integer.parseInt(age.toString()))
+            val user = User(0,firstName,lastName,Integer.parseInt(age.toString()))
 
             mUserViewModel.addUser(user)
             Toast.makeText(requireContext(),"User successfully added.",Toast.LENGTH_LONG).show()

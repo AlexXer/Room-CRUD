@@ -1,16 +1,17 @@
 package com.alexxer.crud.data
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
+import com.alexxer.crud.model.User
 
 @Dao
 interface UserDao {
 
+    @Update
+    suspend fun updateUser(user:User)
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun addUser(user: User)
+    suspend fun addUser(user: User)
 
     @Query("SELECT * FROM user_table ORDER BY id ASC")
     fun readAllUserData():LiveData<List<User>>

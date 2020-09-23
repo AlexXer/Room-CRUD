@@ -15,4 +15,5 @@
     <dimen name="margin_top">16dp</dimen>
     <dimen name="add_layout_padding">24dp</dimen>
     <dimen name="margin_tob_btn">24dp</dimen>
+    <dimen name="update_layout_padding">24dp</dimen>
 </resources>

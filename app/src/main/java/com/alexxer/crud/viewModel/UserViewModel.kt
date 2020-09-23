@@ -1,9 +1,12 @@
-package com.alexxer.crud.data
+package com.alexxer.crud.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.alexxer.crud.data.UserDatabase
+import com.alexxer.crud.repository.UserRepository
+import com.alexxer.crud.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -21,6 +24,12 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
     fun addUser(user: User) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addUser(user)
+        }
+    }
+
+    fun update(user:User){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.updateUser(user)
         }
     }
 }
